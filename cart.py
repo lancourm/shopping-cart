@@ -42,7 +42,7 @@ def to_usd(my_price):
 #(hold for now) print(products)
 print(len(products))
 
-# 1) Capture product ids unil we're done
+# 1) Capture product ids until we're done
 #(use infinite while loop)
 
 selected_ids = [] #this creates an empty list
@@ -50,10 +50,11 @@ selected_ids = [] #this creates an empty list
 while True: #this is an infinite loop that will never finish
 
     selected_id = input("Please select / scan a valid product id: ")
+    print("When finished, type DONE")
     if selected_id.upper() == "DONE":
         break    
     else:
-        selected_ids.append(selected_id)
+        selected_ids.append(selected_id) #this adds each product to the list
         # we could choose to display the selected product's name and price here, but let's do it later instead
     print(selected_id)
 
@@ -73,3 +74,13 @@ for selected_id in selected_ids:
     matching_products = [p for p in products if str(p["id"]) == selected_id]
     matching_product = matching_products [0]
     print(matching_product["name"], matching_product["price"])
+
+#HERE ARE ALL THE THINGS THAT NEED TO BE DONE - ORGANZIZE AND WRITE CODE ACCORDINGLY
+#Captures / scans product identifiers. 	8%
+#Handles invalid inputs, fails gracefully on invalid product lookups. 	10%
+#Instructs the user about, and handles, the "DONE" signal. 	10%
+#Displays store info. 	8%
+#Displays checkout date and time, in a human-friendly format. 	10%
+#Displays names and prices of all scanned products. 	15%
+#Displays tax and totals. 	15%
+#Submitted via Git repository which reflects an incremental revision history. 	12%
