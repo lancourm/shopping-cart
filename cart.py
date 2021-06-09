@@ -37,50 +37,48 @@ def to_usd(my_price):
     return f"${my_price:,.2f}" #> $12,000.71
 
 
-# TODO: write some Python code here to produce the desired output
+# D) Displays store info. 	8%
+print("----------------------")
+print("LANCOUR CORNER DELI")
+print("QUEENS, NY")
+print("CIRCA 2021")
+print("----------------------")
 
-#(hold for now) print(products)
-print(len(products))
-
-# 1) Capture product ids until we're done
-#(use infinite while loop)
+# A) Captures / scans product identifiers. 	8% 
 
 selected_ids = [] #this creates an empty list
 
-while True: #this is an infinite loop that will never finish
-
-    selected_id = input("Please select / scan a valid product id: ")
-    print("When finished, type DONE")
-    if selected_id.upper() == "DONE":
+while True: #this is an infinite loop that will never finish until 
+    choice = input("Please select / scan a valid product id: ")
+    print("When finished, type DONE")  # C) Instructs the user about, and handles, the "DONE" signal. 	10%
+    if choice.upper() == "DONE":
         break    
     else:
-        selected_ids.append(selected_id) #this adds each product to the list
+        selected_ids.append(choice) #this adds each product to the list
         # we could choose to display the selected product's name and price here, but let's do it later instead
-    print(selected_id)
+    print(choice)
 
 print("WE HAVE REACHED THE END OF THE LOOP")
 print(selected_ids)
 
-
-
 # 2) Perform product lookups to determine what the product's name and price are
 # selected_ids = ["1", "2", "3", "2", "1"]
 
-for selected_id in selected_ids:
-    print(selected_id)
-    #lookup corresponding product!
-    # if we dind't display the product name before (line 57), we can do it later
+for choice in selected_ids:
+    print(choice)
+    # lookup the corresponding product!
+    # or maybe display the selected product's name and price
+matching_products = [p for p in products if str(p["id"]) == str(choice)]
+    #matching_product = products["id"]
+print(matching_products["name"], matching_products["price"])
 
-    matching_products = [p for p in products if str(p["id"]) == selected_id]
-    matching_product = matching_products [0]
-    print(matching_product["name"], matching_product["price"])
 
 #HERE ARE ALL THE THINGS THAT NEED TO BE DONE - ORGANZIZE AND WRITE CODE ACCORDINGLY
-#Captures / scans product identifiers. 	8%
-#Handles invalid inputs, fails gracefully on invalid product lookups. 	10%
-#Instructs the user about, and handles, the "DONE" signal. 	10%
-#Displays store info. 	8%
-#Displays checkout date and time, in a human-friendly format. 	10%
-#Displays names and prices of all scanned products. 	15%
-#Displays tax and totals. 	15%
-#Submitted via Git repository which reflects an incremental revision history. 	12%
+# A) Captures / scans product identifiers. 	8% - COMPLETED
+# B) Handles invalid inputs, fails gracefully on invalid product lookups. 	10%
+# C) Instructs the user about, and handles, the "DONE" signal. 	10% - COMPLETED
+# D) Displays store info. 	8% - COMPLETED
+# E) Displays checkout date and time, in a human-friendly format. 	10%
+# F) Displays names and prices of all scanned products. 	15%
+# G) Displays tax and totals. 	15%
+# H) Submitted via Git repository which reflects an incremental revision history. 	12%
