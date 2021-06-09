@@ -42,6 +42,18 @@ print("----------------------")
 print("LANCOUR CORNER DELI")
 print("QUEENS, NY")
 print("CIRCA 2021")
+print("www.LancourCornerDeli.com")
+print("----------------------")
+
+# E) Displays checkout date and time, in a human-friendly format.
+
+import datetime
+import time
+e = datetime.datetime.now()
+print ("CHECKOUT AT:")
+print ("%s/%s/%s" % (e.day, e.month, e.year))
+print (time.strftime("%I:%M"))
+
 print("----------------------")
 
 # A) Captures / scans product identifiers. 	8% 
@@ -78,7 +90,7 @@ print(matching_products["name"], matching_products["price"])
 # B) Handles invalid inputs, fails gracefully on invalid product lookups. 	10%
 # C) Instructs the user about, and handles, the "DONE" signal. 	10% - COMPLETED
 # D) Displays store info. 	8% - COMPLETED
-# E) Displays checkout date and time, in a human-friendly format. 	10%
+# E) Displays checkout date and time, in a human-friendly format. 	10% - COMPLETED
 # F) Displays names and prices of all scanned products. 	15%
 # G) Displays tax and totals. 	15%
 # H) Submitted via Git repository which reflects an incremental revision history. 	12%
