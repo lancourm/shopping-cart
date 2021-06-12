@@ -36,6 +36,18 @@ def to_usd(my_price):
     """
     return f"${my_price:,.2f}" #> $12,000.71
 
+total_price = 0
+selected_ids = []
+
+# A) Captures / scans product identifiers. 	8% 
+# C) Instructs the user about, and handles, the "DONE" signal. 	10%
+while True: #this is an infinite loop that will never finish until we command it to
+    selected_id = input("Please select / scan a valid product id, or DONE: ") 
+    if selected_id == "DONE":
+        break 
+    else:
+        selected_ids.append(selected_id)
+
 
 # D) Displays store info. 	8%
 print("----------------------")
@@ -56,54 +68,31 @@ print (time.strftime("%I:%M"))
 
 print("----------------------")
 
-# A) Captures / scans product identifiers. 	8% 
-# C) Instructs the user about, and handles, the "DONE" signal. 	10%
-while True: #this is an infinite loop that will never finish until we command it to
-    selected_id = input("Please select / scan a valid product id, or DONE: ") 
-    if selected_id == "DONE":
-        break 
+
+# F) Displays names and prices of all scanned products. 	15% - COMPLETED
+#print("SELECTED PRODUCT: " + matching_product["name"], to_usd(matching_product["price"]))
+print("SELECTED ITEMS: ")
+for selected_id in selected_ids:
     matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
     matching_product = matching_products[0]
-    print("SELECTED PRODUCT: " + matching_product["name"], to_usd(matching_product["price"]))
-    
+    total_price = total_price + matching_product["price"]
+    print(matching_product["name"] + " " + to_usd(matching_product["price"]))
 
-#selected_ids = [] #this creates an empty list
+print("----------------------")
 
+# G) Displays tax and totals. 	15%
 
-    #choice = input("Please select / scan a valid product id, or DONE: ")
-    
+print("TOTAL PRICE: ", to_usd(total_price))
+print("TAX: ", to_usd(total_price *.085))
+print("FINAL PRICE INCLUDING TAX: ", to_usd(total_price * 1.085))
 
-   #for item in products:
-      # matching_products = [item for item in products if item["name"] == item]
-        #print(d, f"({len(matching_products)} {label})")
-        #print(item["name"], to_usd(item["price"]))
-       
+print("----------------------")
 
-print("WE HAVE REACHED THE END OF THE LOOP")
-
-#total = 0
+print("Thank you for shopping at Lancour Corner Deli!")
+print("We hope to see you again soon!")
 #for item in products:
     #total = total + item (NEED TO FIGURE OUT HOW TO FIND PRICE)
-#print(toatl)
 
-    #else:
-       # selected_ids.append(choice) #this adds each product to the list
-        # we could choose to display the selected product's name and price here, but let's do it later instead
-   # print(choice)
-
-
-#print(selected_ids)
-
-# 2) Perform product lookups to determine what the product's name and price are
-# selected_ids = ["1", "2", "3", "2", "1"]
-
-#for choice in selected_ids:
-    #print(choice)
-    # lookup the corresponding product!
-    # or maybe display the selected product's name and price
-#matching_products = [p for p in products if str(p["id"]) == str(choice)]
-    #matching_product = products["id"]
-#print(matching_products["name"], matching_products["price"])
 
 
 #HERE ARE ALL THE THINGS THAT NEED TO BE DONE - ORGANZIZE AND WRITE CODE ACCORDINGLY
@@ -112,6 +101,6 @@ print("WE HAVE REACHED THE END OF THE LOOP")
 # C) Instructs the user about, and handles, the "DONE" signal. 	10% - COMPLETED
 # D) Displays store info. 	8% - COMPLETED
 # E) Displays checkout date and time, in a human-friendly format. 	10% - COMPLETED
-# F) Displays names and prices of all scanned products. 	15%
+# F) Displays names and prices of all scanned products. 	15% - COMPLETED
 # G) Displays tax and totals. 	15%
 # H) Submitted via Git repository which reflects an incremental revision history. 	12%
