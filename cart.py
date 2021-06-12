@@ -58,15 +58,18 @@ print("----------------------")
 
 # A) Captures / scans product identifiers. 	8% 
 # C) Instructs the user about, and handles, the "DONE" signal. 	10%
-selected_id = input("Please select / scan a valid product id, or DONE: ") 
-matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
-matching_product = matching_products[0]
-print("SELECTED PRODUCT: " + matching_product["name"], to_usd(matching_product["price"]))
-
+while True: #this is an infinite loop that will never finish until we command it to
+    selected_id = input("Please select / scan a valid product id, or DONE: ") 
+    if selected_id == "DONE":
+        break 
+    matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
+    matching_product = matching_products[0]
+    print("SELECTED PRODUCT: " + matching_product["name"], to_usd(matching_product["price"]))
+    
 
 #selected_ids = [] #this creates an empty list
 
-#while True: #this is an infinite loop that will never finish until we command it to
+
     #choice = input("Please select / scan a valid product id, or DONE: ")
     
 
@@ -74,8 +77,7 @@ print("SELECTED PRODUCT: " + matching_product["name"], to_usd(matching_product["
       # matching_products = [item for item in products if item["name"] == item]
         #print(d, f"({len(matching_products)} {label})")
         #print(item["name"], to_usd(item["price"]))
-    #if choice.upper() == "DONE":
-        #break    
+       
 
 print("WE HAVE REACHED THE END OF THE LOOP")
 
