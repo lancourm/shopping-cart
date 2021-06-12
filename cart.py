@@ -57,21 +57,25 @@ print (time.strftime("%I:%M"))
 print("----------------------")
 
 # A) Captures / scans product identifiers. 	8% 
+# C) Instructs the user about, and handles, the "DONE" signal. 	10%
+selected_id = input("Please select / scan a valid product id, or DONE: ") 
+matching_products = [p for p in products if str(p["id"]) == str(selected_id)]
+matching_product = matching_products[0]
+print("SELECTED PRODUCT: " + matching_product["name"], to_usd(matching_product["price"]))
 
-name = list(set(name)) 
 
-selected_ids = [] #this creates an empty list
+#selected_ids = [] #this creates an empty list
 
-while True: #this is an infinite loop that will never finish until we command it to
-    choice = input("Please select / scan a valid product id, or DONE: ")
-    # C) Instructs the user about, and handles, the "DONE" signal. 	10%
+#while True: #this is an infinite loop that will never finish until we command it to
+    #choice = input("Please select / scan a valid product id, or DONE: ")
+    
 
-    for item in products:
-        matching_products = [item for item in products if item["name"] == item]
+   #for item in products:
+      # matching_products = [item for item in products if item["name"] == item]
         #print(d, f"({len(matching_products)} {label})")
-        print(item["name"], to_usd(item["price"]))
-    if choice.upper() == "DONE":
-        break    
+        #print(item["name"], to_usd(item["price"]))
+    #if choice.upper() == "DONE":
+        #break    
 
 print("WE HAVE REACHED THE END OF THE LOOP")
 
@@ -91,13 +95,13 @@ print("WE HAVE REACHED THE END OF THE LOOP")
 # 2) Perform product lookups to determine what the product's name and price are
 # selected_ids = ["1", "2", "3", "2", "1"]
 
-for choice in selected_ids:
-    print(choice)
+#for choice in selected_ids:
+    #print(choice)
     # lookup the corresponding product!
     # or maybe display the selected product's name and price
-matching_products = [p for p in products if str(p["id"]) == str(choice)]
+#matching_products = [p for p in products if str(p["id"]) == str(choice)]
     #matching_product = products["id"]
-print(matching_products["name"], matching_products["price"])
+#print(matching_products["name"], matching_products["price"])
 
 
 #HERE ARE ALL THE THINGS THAT NEED TO BE DONE - ORGANZIZE AND WRITE CODE ACCORDINGLY
