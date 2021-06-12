@@ -63,8 +63,8 @@ name = list(set(name))
 selected_ids = [] #this creates an empty list
 
 while True: #this is an infinite loop that will never finish until we command it to
-    choice = input("Please select / scan a valid product id: ")
-    print("When finished, type DONE")  # C) Instructs the user about, and handles, the "DONE" signal. 	10%
+    choice = input("Please select / scan a valid product id, or DONE: ")
+    # C) Instructs the user about, and handles, the "DONE" signal. 	10%
 
     for item in products:
         matching_products = [item for item in products if item["name"] == item]
