@@ -58,20 +58,35 @@ print("----------------------")
 
 # A) Captures / scans product identifiers. 	8% 
 
+name = list(set(name)) 
+
 selected_ids = [] #this creates an empty list
 
-while True: #this is an infinite loop that will never finish until 
+while True: #this is an infinite loop that will never finish until we command it to
     choice = input("Please select / scan a valid product id: ")
     print("When finished, type DONE")  # C) Instructs the user about, and handles, the "DONE" signal. 	10%
+
+    for item in products:
+        matching_products = [item for item in products if item["name"] == item]
+        #print(d, f"({len(matching_products)} {label})")
+        print(item["name"], to_usd(item["price"]))
     if choice.upper() == "DONE":
         break    
-    else:
-        selected_ids.append(choice) #this adds each product to the list
-        # we could choose to display the selected product's name and price here, but let's do it later instead
-    print(choice)
 
 print("WE HAVE REACHED THE END OF THE LOOP")
-print(selected_ids)
+
+#total = 0
+#for item in products:
+    #total = total + item (NEED TO FIGURE OUT HOW TO FIND PRICE)
+#print(toatl)
+
+    #else:
+       # selected_ids.append(choice) #this adds each product to the list
+        # we could choose to display the selected product's name and price here, but let's do it later instead
+   # print(choice)
+
+
+#print(selected_ids)
 
 # 2) Perform product lookups to determine what the product's name and price are
 # selected_ids = ["1", "2", "3", "2", "1"]
