@@ -45,6 +45,8 @@ while True: #this is an infinite loop that will never finish until we command it
     selected_id = input("Please select / scan a valid product id, or DONE: ") 
     if selected_id == "DONE":
         break 
+    elif int(selected_id) > 20:
+        print ("Invalid product id. Please try again.")
     else:
         selected_ids.append(selected_id)
 
@@ -102,5 +104,5 @@ print("We hope to see you again soon!")
 # D) Displays store info. 	8% - COMPLETED
 # E) Displays checkout date and time, in a human-friendly format. 	10% - COMPLETED
 # F) Displays names and prices of all scanned products. 	15% - COMPLETED
-# G) Displays tax and totals. 	15%
-# H) Submitted via Git repository which reflects an incremental revision history. 	12%
+# G) Displays tax and totals. 	15% - COMPLETED
+# H) Submitted via Git repository which reflects an incremental revision history. 	12% - COMPLETED
