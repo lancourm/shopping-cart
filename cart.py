@@ -45,7 +45,7 @@ while True: #this is an infinite loop that will never finish until we command it
     selected_id = input("Please select / scan a valid product id, or DONE: ") 
     if selected_id == "DONE":
         break 
-    elif int(selected_id) > 20:
+    elif int(selected_id) > len(products):
         print ("Invalid product id. Please try again.")
     else:
         selected_ids.append(selected_id)
@@ -79,6 +79,7 @@ for selected_id in selected_ids:
     matching_product = matching_products[0]
     total_price = total_price + matching_product["price"]
     print(matching_product["name"] + " " + to_usd(matching_product["price"]))
+
 
 print("----------------------")
 
