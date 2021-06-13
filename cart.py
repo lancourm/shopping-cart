@@ -51,7 +51,7 @@ while True: #this is an infinite loop that will never finish until we command it
         selected_ids.append(selected_id)
 
 
-# D) Displays store info. 	8%
+# D) Displays store info. 	8% - COMPLETED
 print("----------------------")
 print("LANCOUR CORNER DELI")
 print("QUEENS, NY")
@@ -59,7 +59,7 @@ print("CIRCA 2021")
 print("www.LancourCornerDeli.com")
 print("----------------------")
 
-# E) Displays checkout date and time, in a human-friendly format.
+# E) Displays checkout date and time, in a human-friendly format. - COMPLETED
 
 import datetime
 import time
@@ -82,11 +82,11 @@ for selected_id in selected_ids:
 
 print("----------------------")
 
-# G) Displays tax and totals. 	15%
+# G) Displays tax and totals. 	15% - COMPLETED
 
-print("TOTAL PRICE: ", to_usd(total_price))
-print("TAX: ", to_usd(total_price *.085))
-print("FINAL PRICE INCLUDING TAX: ", to_usd(total_price * 1.085))
+print("SUBTOTAL: ", to_usd(total_price))
+print("TAX: ", to_usd(total_price *.0875))
+print("TOTAL: ", to_usd(total_price * 1.0875))
 
 print("----------------------")
 
